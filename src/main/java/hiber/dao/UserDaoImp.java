@@ -39,7 +39,7 @@ public class UserDaoImp implements UserDao {
 
    @Override
    public User findOwner(String car_model, String car_series) {
-      TypedQuery<User> findUserQuery = sessionFactory.getCurrentSession().createQuery("FROM User WHERE car.model = :car_model AND car.series = :car_series" )
+      TypedQuery<User> findUserQuery = sessionFactory.getCurrentSession().createQuery("FROM User u WHERE u.car.model = :car_model AND u.car.series = :car_series")
               .setParameter("car_model", car_model)
               .setParameter("car_series", car_series);
       List<User> findUserList = findUserQuery.getResultList();
