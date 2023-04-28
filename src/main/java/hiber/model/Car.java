@@ -16,8 +16,6 @@ public class Car {
     @Column(name="series")
     private String series;
 
-    @OneToOne(mappedBy = "car")
-    private User owner;
 
     public Car() {
 
@@ -43,11 +41,6 @@ public class Car {
     public void setSeries(String series) {
         this.series = series;
     }
-
-    public User getUser() {
-        return owner;
-    }
-
 
     @Override
     public String toString() {
